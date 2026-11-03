@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/src/main.ts"></script>
+    <title>Computing in Education</title>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
+    <div class="staffimage">
+    <img id="staff" alt="Staff">
+    </div>
+    <div id="stafftext">
+      <p></p>
+    </div>
+    <script>
+      let filepaths = ["/debleena.jpg", "/carlton.jpg", "/thomas.png", "/willsue.jpeg"]
+      let names = ["Debleena Thacker", "Carlton Shepherd", "Thomas Erlebach", "Sue Black and William"]
+      let randomnum = Math.floor(Math.random()*filepaths.length)
+      let filepath = filepaths[randomnum]
+      let name = names[randomnum]
+
+      document.getElementById("staff").src = filepath
+      document.getElementById("stafftext").innerText = name
+      if (randomnum == 3){
+        document.getElementById("stafftext").style.color = "black"
+        document.getElementById("stafftext").style.fontSize = "40pt"
+        document.getElementById("stafftext").style.fontFamily = "Impact"
+      }
+    </script>
+</body>
+</html>
