@@ -9,6 +9,14 @@
 </head>
 
 <body>
+    <div id="navbar"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
     <div class="content">
         <h1>Computer Science in Deep Sea Repair</h1>
 
